@@ -1,21 +1,8 @@
-// import { numero } from '../app.js';
-const payOff = document.getElementById('payoff-amount');
-const originalPayment = document.getElementById('option-frequency');
-const cpi = document.getElementById('cpi-amount');
-const originalFrequency = document.getElementById('option-frequency');
-const lateCharge = document.getElementById('late-charge');
 
-const botonSubmit = document.getElementById('boton-submit');
-
-botonSubmit.addEventListener('click', (e)=>{
-    e.preventDefault();
-    console.log(payOff.value);
-    console.log(originalPayment.value);
-console.log(cpi.value);
-console.log(originalFrequency.value);
-console.log(lateCharge.value);
-
-});
+export const numero = (n1,n2) =>{
+  
+    return n1 + n2;
+} ;
 
 
 const cpiAmount = (payOff , cpiAmount) =>{
