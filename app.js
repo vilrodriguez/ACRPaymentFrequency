@@ -11,10 +11,13 @@ const cpiAmount = (payOff , cpiAmount) =>{
         cpiA = 86.67;
     }
     if (payOff.value >= 6000 && originalFrequency.value === 'semi-monthly'){
-        cpiA = 86.67;
+        cpiA = 43.34;
     }
-    if (payOff.value >= 6000 && originalFrequency.value === 'semi-monthly'){
-        
+    if (payOff.value >= 6000 && originalFrequency.value === 'biweekly'){
+        cpiA = 40.00;
+    }
+    if (payOff.value >= 6000 && originalFrequency.value === 'weekly'){
+        cpiA = 20.00;
     }
     
 }
