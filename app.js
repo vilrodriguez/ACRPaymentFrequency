@@ -1,10 +1,17 @@
+export const numberIntoFloat = (amount) =>{
+    console.log(parseFloat(amount.value));
+  
+  }; 
 export const cpiAmount = (payOff, frequency, hasCPI) =>{
-    // let payOFF = payOff;
+    let payOFF = parseFloat(payOff).toFixed(2);
+    console.log(payOFF);
     let freq = frequency.value;
+    console.log(freq);
     let hascpi = hasCPI.value;
+    console.log(hascpi);
     let cpiAmount = 0;
     if (hascpi ==='YES'){
-        if (payOff >= 6000){
+        if (payOFF >= 6000){
             if (freq ==='monthly'){
                 cpiAmount =parseFloat(86.67);
             }
@@ -18,7 +25,7 @@ export const cpiAmount = (payOff, frequency, hasCPI) =>{
                 cpiAmount =parseFloat(20);
             }
         }
-        if (payOff <= 5999){
+        if (payOFF <= 5999){
             if (freq ==='monthly'){
                 cpiAmount =parseFloat(65);
             }
@@ -40,9 +47,12 @@ export const cpiAmount = (payOff, frequency, hasCPI) =>{
 
 
 export const lateCharge= (amount, late)=> {
-    let payAmount = parseFloat(amount.value, 2);
+    let payAmount = parseFloat(amount.value).toFixed(2);
+    console.log(payAmount);
     let regularLatecharge = (payAmount * 5)/100;
-    let robertsonLatecharge = parseFloat(15, 2);
+    console.log(regularLatecharge);
+    let robertsonLatecharge = parseFloat(15).toFixed(2);
+    console.log(robertsonLatecharge);
     let hasLateCharge = late.value;
     let lc =0;
     if (hasLateCharge === 'YES'){
