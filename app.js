@@ -52,7 +52,7 @@ export const lateCharge= (amount, late)=> {
     let regularLatecharge = (payAmount * 5)/100;
     console.log(regularLatecharge);
     let robertsonLatecharge = parseFloat(15).toFixed(2);
-    console.log(robertsonLatecharge);
+    
     let hasLateCharge = late.value;
     let lc =0;
     if (hasLateCharge === 'YES'){
