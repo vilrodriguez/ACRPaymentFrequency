@@ -1,9 +1,9 @@
 export const cpiAmount = (payOff, frequency, hasCPI) =>{
     let payOFF = parseFloat(payOff.value);
     let freq = frequency.value;
-    let hascpi = hasCPI.value;
+    /* let hascpi = hasCPI.value; */
     let cpiAmount = 0;
-    if (hascpi ==='YES'){
+    if (hasCPI.value ==='checked'){
         if (payOFF >= 6000){
             if (freq ==='monthly'){
                 cpiAmount =parseFloat(86.67);

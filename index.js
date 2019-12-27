@@ -2,7 +2,7 @@ import { cpiAmount, lateCharge } from '../app.js';
 
 const payOff = document.getElementById('payoff-amount');
 const originalPayment = document.getElementById('pmt-amount'); 
-const hasCpi = document.getElementById('cpi');
+const hasCpi = document.querySelector('#cpi');
 const originalFrequency = document.getElementById('option-frequency');
 const hasCharge = document.getElementById('late-charge');
 
@@ -48,3 +48,8 @@ originalFrequency.value='';
 hasCharge.value='';
 
 });
+
+hasCpi.addEventListener('checked', ()=>{
+    const cpivalor = document.getElementById('cpi-value');
+    cpivalor.innerHtml =cpiAmount(payOff, originalFrequency, hasCpi,originalPayment);
+})
