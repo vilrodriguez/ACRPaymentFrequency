@@ -19,8 +19,13 @@
         <form>
         <input id="payoff-amount" type="number" class="" placeholder="Only Numbers"> Pay Off </input> <br>
         <input id="pmt-amount" type="number" class="" placeholder="Only Numbers"> Original Payment Amount </input> <br>
-        <input id="cpi-amount" type="number" class="" placeholder="Only Numbers"> C.P.I. Amount </input> <br>
-       
+        <span> Has C.P.I.?</span> <br>
+        <select id="cpi">  <br>
+          <option value=""> </option>
+          <option value="YES">YES</option>
+          <option value="NO">NO</option>
+          
+        </select>
     
         <select id="option-frequency">  <br>
             <option value=""> </option>
@@ -38,6 +43,7 @@
           </select>
           <br>
           <button id="boton-submit" value="Submit"> Send </button>
+          <button id="boton-refresh" value="Submit"> Refresh </button>
         </form>
         </section>
         <section>

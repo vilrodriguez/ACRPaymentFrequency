@@ -1,35 +1,50 @@
-import { numero } from '../app.js';
+import { cpiAmount, lateCharge } from '../app.js';
 
 const payOff = document.getElementById('payoff-amount');
-const originalPayment = document.getElementById('option-frequency');
-const cpi = document.getElementById('cpi-amount');
+const originalPayment = document.getElementById('pmt-amount'); 
+const hasCpi = document.getElementById('cpi');
 const originalFrequency = document.getElementById('option-frequency');
-const lateCharge = document.getElementById('late-charge');
+const hasCharge = document.getElementById('late-charge');
 
 const botonSubmit = document.getElementById('boton-submit');
+lateCharge(originalPayment, hasCharge);
+const botonRefresh = document.getElementById('boton-refresh');
+
+const paymentWithLateCharge = lateCharge(originalPayment, hasCharge) + parseFloat(originalPayment.value);
+
+const payment = parseFloat(originalPayment.value);
+cpiAmount(payOff, originalFrequency, hasCpi,originalPayment);
+
+
+let payWithCpi = payment + cpiAmount(payOff, originalFrequency, hasCpi,originalPayment);
+
+const fullPayment = payment + cpiAmount(payOff, originalFrequency, hasCpi,originalPayment) + lateCharge(originalPayment, hasCharge);
 
 botonSubmit.addEventListener('click', (e)=>{
     e.preventDefault();
-    console.log(payOff.value);
-    console.log(originalPayment.value);
-console.log(cpi.value);
-console.log(originalFrequency.value);
-console.log(lateCharge.value);
-console.log (numero(parseInt(2), parseInt(5)));
+
+console.log('Late Charge of the payment: '+ lateCharge(originalPayment, hasCharge));
+console.log('Payment with Late Charge: '+ paymentWithLateCharge);
+console.log('CPI for the account: '+cpiAmount(payOff, originalFrequency, hasCpi,originalPayment ));
+console.log('Payment with Cpi: '+ payWithCpi);
+console.log(fullPayment);
+
+/* payOff.value='';
+originalPayment.value=''; 
+hasCpi.value='';
+originalFrequency.value='';
+
+hasCharge.value=''; */
 
 });
+botonRefresh.addEventListener('click', (e)=>{
+    e.preventDefault();
 
+payOff.value='';
+originalPayment.value=''; 
+hasCpi.value='';
+originalFrequency.value='';
 
-// const cpiAmount = (payOff , cpiAmount) =>{
-//     let cpiA = 0;
-//     if (payOff.value >= 6000 && originalFrequency.value === 'monthly') {
-//         cpiA = 86.67;
-//     }
-//     if (payOff.value >= 6000 && originalFrequency.value === 'semi-monthly'){
-//         cpiA = 86.67;
-//     }
-//     if (payOff.value >= 6000 && originalFrequency.value === 'semi-monthly'){
-        
-//     }
-    
-// }
+hasCharge.value='';
+
+});
