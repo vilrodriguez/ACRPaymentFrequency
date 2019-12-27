@@ -3,7 +3,7 @@ export const numberIntoFloat = (amount) =>{
   
   }; 
 export const cpiAmount = (payOff, frequency, hasCPI) =>{
-    let payOFF = parseFloat(payOff).toFixed(2);
+    let payOFF = parseFloat(payOff.value).toFixed(2);
     console.log(payOFF);
     let freq = frequency.value;
     console.log(freq);
@@ -38,7 +38,7 @@ export const cpiAmount = (payOff, frequency, hasCPI) =>{
             if (freq ==='weekly'){
                 cpiAmount =parseFloat(15);
             }
-        }
+        } return cpiAmount
     }else {
         cpiAmount = 0;
     }
