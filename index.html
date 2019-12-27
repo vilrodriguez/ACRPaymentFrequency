@@ -20,6 +20,7 @@
         <input id="payoff-amount" type="number" class="" placeholder="Pay Off "> <br>
         <input id="pmt-amount" type="number" class="" placeholder="Payment Amount"> <br>
         <label for="option-frequency">Original Frequency</label>
+       
         <select id="option-frequency">  <br>
           <option value="">Choose one </option>
           <option value="monthly">Monthly</option>
@@ -27,11 +28,12 @@
           <option value="biweekly">Biweekly</option>
           <option value="weekly">Weekly</option>
         </select> <br>
-        <span> Has C.P.I.?</span> <br>
+        <label for="cpi">Account Has CPI?</label>
         <select id="cpi">  <br>
           <option value="NO">NO</option>
           <option value="YES">YES</option>
         </select> <br>
+        <p id="cpi-valor"></p>
     
         <span> Late charge </span> <br>
         <select id="late-charge"> 
@@ -41,6 +43,9 @@
             <option value="ROBERTSON15">Robertson Dealer $15</option>
           </select>
           <br>
+          <p id="late-valor"></p>
+
+          <p id="final-payment"></p>
           <input id="boton-submit" type="submit" value="Submit">
           
         </form>
