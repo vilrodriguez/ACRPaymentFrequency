@@ -1,7 +1,7 @@
 import { cpiAmount, lateCharge } from '../app.js';
 
 const payOff = document.getElementById('payoff-amount');
-const originalPayment = document.getElementById('pmt-amount'); 
+const originalPayment = document.getElementById('pmt-amount');
 const hasCpi = document.getElementById('cpi');
 const originalFrequency = document.getElementById('option-frequency');
 const hasCharge = document.getElementById('late-charge');
@@ -18,11 +18,11 @@ cpiAmount(payOff, originalFrequency, hasCpi,originalPayment);
 
 let payWithCpi = payment + cpiAmount(payOff, originalFrequency, hasCpi,originalPayment);
 
-const fullPayment = payment + cpiAmount(payOff, originalFrequency, hasCpi,originalPayment) + lateCharge(originalPayment, hasCharge);
+let fullPayment = payment + ((cpiAmount(payOff, originalFrequency, hasCpi,originalPayment)) + (lateCharge(originalPayment, hasCharge)));
 
 botonSubmit.addEventListener('click', (e)=>{
     e.preventDefault();
-
+console.log(parseFloat((payOff.value)).toFixed(2));
 console.log('Late Charge of the payment: '+ lateCharge(originalPayment, hasCharge));
 console.log('Payment with Late Charge: '+ paymentWithLateCharge);
 console.log('CPI for the account: '+cpiAmount(payOff, originalFrequency, hasCpi,originalPayment ));
@@ -37,14 +37,9 @@ originalFrequency.value='';
 hasCharge.value=''; */
 
 });
-botonRefresh.addEventListener('click', (e)=>{
-    e.preventDefault();
+//turn number into float with 2 decimals.
+const numberIntoFloat = (amount) =>{
+  return Number.parseFloat(amount.value).toFixed(2);
 
-payOff.value='';
-originalPayment.value=''; 
-hasCpi.value='';
-originalFrequency.value='';
-
-hasCharge.value='';
-
-});
+}; 
+numberIntoFloat(payOff);
