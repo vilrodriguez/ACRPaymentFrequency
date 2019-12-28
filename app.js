@@ -49,18 +49,18 @@ export const cpiAmount = (payOff, frequency, hasCPI) =>{
 
 export const lateCharge= (amount, late)=> {
     let payAmount = parseFloat(amount.value).toFixed(2);
-    let regularLatecharge = (payAmount * 5)/100;
-    let robertsonLatecharge = parseFloat(15);
     let hasLateCharge = late.value;
     let lc =0;
+    /* let regularLatecharge = (payAmount * 5)/100; 
+    let robertsonLatecharge = parseFloat(15);*/
     
     /* console.log(payAmount);
     console.log(regularLatecharge); */
     if (hasLateCharge === 'YES'){
-        lc = regularLatecharge;
+        lc = (payAmount * 5)/100;
     }
     else if (hasLateCharge ==='ROBERTSON15'){
-        lc=robertsonLatecharge;
+        lc=parseFloat(15);
     }
     
     else{
